@@ -1,0 +1,14 @@
+version: '3.8'
+services:
+  runner:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      - REPO=${REPO}
+      - ACCESS_TOKEN=${ACCESS_TOKEN}
+    deploy:
+      resources:
+        limits:
+          cpus: '0.35'
+          memory: 300M
